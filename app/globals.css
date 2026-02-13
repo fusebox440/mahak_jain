@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .gold-text {
+    @apply text-transparent bg-clip-text bg-gold-shine;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md bg-white/5 border border-gold-500/20 rounded-2xl;
+  }
+  
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-600 to-gold-400 text-dark-50 font-semibold px-6 py-3 rounded-full hover:shadow-lg hover:shadow-gold-500/50 transition-all duration-300;
+  }
+  
+  .btn-dark {
+    @apply bg-dark-100 text-gold-400 font-semibold px-6 py-3 rounded-full border border-gold-500/30 hover:bg-dark-50 hover:border-gold-400 transition-all duration-300;
+  }
+}
+
+/* Floating hearts animation */
+@keyframes float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) scale(0.5);
+  }
+}
+
+.heart-float {
+  animation: float-up 8s linear forwards;
+}
+
+/* Smooth page transitions */
+.page-transition {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar - Dark/Gold Theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37 0%, #A67C00 100%);
+  border-radius: 10px;
+  border: 2px solid rgba(20, 20, 20, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F4CF67 0%, #D4AF37 100%);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 rgba(20, 20, 20, 0.5);
+}

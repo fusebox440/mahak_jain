@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Travels</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { blush: '#f7cad0', champagne: '#e6c79c', rose: '#b76e79', ivory: '#fff8f5', midnight: '#2b2b35' } } } }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/modern.css" />
+</head>
+<body class="font-['Inter'] text-midnight">
+  <div id="headerMount"></div>
+
+  <main class="relative z-10 mx-auto max-w-6xl px-4 py-12 md:px-6">
+    <h1 class="page-title hero-fade font-['Playfair_Display'] text-4xl font-bold md:text-5xl">Our Travels</h1>
+    <p class="hero-fade mt-3 text-slate-600">Cities changed, but the feeling stayed the same: us.</p>
+
+    <section class="mt-10 space-y-5">
+      <article class="glass-card hero-fade rounded-2xl p-6"><h3 class="font-['Playfair_Display'] text-2xl">Mumbai</h3><p class="mt-2 text-slate-700">Busy roads, sea breeze, and us collecting stories by the shore.</p></article>
+      <article class="glass-card hero-fade rounded-2xl p-6"><h3 class="font-['Playfair_Display'] text-2xl">Gwalior</h3><p class="mt-2 text-slate-700">Forts and old walls, while we wrote new memories.</p></article>
+      <article class="glass-card hero-fade rounded-2xl p-6"><h3 class="font-['Playfair_Display'] text-2xl">Vrindavan</h3><p class="mt-2 text-slate-700">Quiet prayers, soft mornings, and gratitude for each other.</p></article>
+    </section>
+  </main>
+
+  <div id="footerMount"></div>
+
+  <script src="js/modern-layout.js"></script>
+  <script src="js/modern-animations.js"></script>
+  <script>window.renderModernLayout('travels');</script>
+</body>
+</html>

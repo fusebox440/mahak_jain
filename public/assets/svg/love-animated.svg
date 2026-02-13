@@ -1,0 +1,11 @@
+<svg width="180" height="80" viewBox="0 0 180 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path d="M30,40 Q50,10 90,40 Q130,70 150,40" stroke="#d6336c" stroke-width="5" fill="none">
+      <animate attributeName="d" values="M30,40 Q50,10 90,40 Q130,70 150,40;M30,40 Q60,20 90,40 Q120,60 150,40;M30,40 Q50,10 90,40 Q130,70 150,40" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="90" cy="40" r="12" fill="#f783ac">
+      <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="90" y="48" text-anchor="middle" font-size="2rem" fill="#fff">💖</text>
+  </g>
+</svg>

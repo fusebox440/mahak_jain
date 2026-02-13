@@ -1,0 +1,8 @@
+{
+  "/photobooth/page": "app/photobooth/page.js",
+  "/story/page": "app/story/page.js",
+  "/playlist/page": "app/playlist/page.js",
+  "/promises/page": "app/promises/page.js",
+  "/letters/page": "app/letters/page.js",
+  "/travels/page": "app/travels/page.js"
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A sweet, personal website celebrating us." />
+  <title>For Us ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&family=Great+Vibes&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/modern.css" />
+</head>
+<body>
+  <!-- Cinematic Intro ENHAN CEMENT (your original password flow preserved below) -->
+  <div id="cinematicIntro" class="fixed inset-0 z-[3000] flex items-center justify-center bg-black opacity-100 transition-opacity duration-1000">
+    <div class="px-6 text-center">
+      <p id="cinematicLine" class="mb-8 font-['Playfair_Display'] text-3xl leading-relaxed text-[#fff8f5] opacity-0 md:text-4xl">For the one who accidentally became my favorite person</p>
+      <button id="openHeartBtn" class="rounded-full bg-rose-600 px-7 py-3.5 text-sm font-semibold text-white opacity-0 shadow-lg transition hover:bg-rose-700">Open my heart</button>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop preload="auto" src="assets/music/romantic.mp3"></audio>
+  <button id="musicToggleFloating" class="fixed bottom-6 right-6 z-[1500] rounded-full border border-white/30 bg-midnight/60 px-4 py-2.5 text-white backdrop-blur-md shadow-xl transition hover:bg-midnight/75">♫</button>
+
+  <div class="floating-hearts" id="floatingHearts"></div>
+  
+  <!-- YOUR ORIGINAL PASSWORD GATE -->
+  <div id="password-gate" class="password-gate">
+    <div class="gate-inner">
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.2rem;">Welcome, Mahak Jain 💖</h2>
+      <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto 18px auto;display:block;">
+        <path d="M10,30 Q30,10 60,30 Q90,50 110,30" stroke="#d6336c" stroke-width="4" fill="none"/>
+        <circle cx="60" cy="30" r="8" fill="#f783ac"/>
+        <text x="60" y="35" text-anchor="middle" font-size="1.2rem" fill="#fff">💖</text>
+      </svg>
+      <p class="subtitle">This is a private space, just for Us.<br>Enter your secret code to continue.</p>
+      <input type="password" id="password-input" placeholder="Password" autocomplete="off" />
+      <button id="password-btn" class="btn btn-primary">Unlock</button>
+      <p id="password-error" class="muted" style="display:none;color:#d6336c;margin-top:10px;">Incorrect password. Try again!</p>
+      <div id="love-check" style="display:none;margin-top:30px;text-align:center;">
+        <h3 style="font-family:'Caveat',cursive;font-size:1.5rem;">Do you love Lakshya Khetan?</h3>
+        <button class="btn love-btn" data-love="1">Yes</button>
+        <button class="btn love-btn" data-love="2">Haan, bahut jayada!</button>
+        <button class="btn love-btn" data-love="3">Utna nahi</button>
+        <p id="love-check-msg" class="muted" style="margin-top:18px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOUR ORIGINAL SITE CONTENT -->
+  <div id="site-content" style="display:none;">
+    <header class="site-header">
+      <nav class="nav container">
+        <a href="#home" class="logo" aria-label="Go to top" id="siteLogo">For Mahak (Cheesecake)</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#valentine-week">Valentine Week</a></li>
+          <li><a href="memories.html">Our Memories</a></li>
+          <li><a href="photobooth.html">Steal a smile 📸</a></li>
+          <li><a href="#letters">Love Letters</a></li>
+          <li><a href="#playlist">Playlist</a></li>
+          <li><a href="#promises">Our Promises</a></li>
+          <li><a href="#travels">Our Travels</a></li>
+        </ul>
+        <div class="theme-switcher">
+          <button id="themeToggle" class="theme-btn" title="Change Theme">🎨</button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="home" class="section hero animated-page">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>Hi <span class="accent">Mahak Jain</span>!<br><span class="nickname">(aka Cheesecake)</span></h1>
+              <p class="romantic-tagline">You're not just my girlfriend, you're my home, my adventure, my forever.<br>Every heartbeat whispers your name.</p>
+              <p class="love-signature">— Your devoted Lakshya 💕</p>
+              <div class="hero-actions">
+                <a href="#story" class="btn btn-primary">✨ Explore Our World</a>
+                <a href="memories.html" class="btn btn-secondary">💕 See Our Memories</a>
+              </div>
+            </div>
+            <div class="hero-photo">
+              <div class="photo-frame">
+                <img id="randomMahakPhoto" src="" alt="My Beautiful Mahak" class="mahak-photo" />
+                <div class="photo-caption">My Beautiful Cheesecake 💕</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-animation">
+            <img src="assets/svg/love-animated.svg" alt="Animated Love" />
+          </div>
+        </div>
+      </section>
+
+      <section id="story" class="section animated-page">
+        <div class="container">
+          <h2>Our Story</h2>
+          <p class="muted">The beautiful tale of how we found each other, written in the stars and lived in our hearts.</p>
+          
+          <div class="story-book">
+            <div class="book-cover">
+              <h3>The Love Story of</h3>
+              <h1>Lakshya & Mahak</h1>
+              <div class="book-subtitle">A Journey of Hearts</div>
+              <div class="book-decoration">💕</div>
+            </div>
+            
+            <div class="story-chapters">
+              <div class="chapter active">
+                <div class="chapter-header">
+                  <h3 class="chapter-title">Coming Soon...</h3>
+                  <div class="chapter-subtitle">Our beautiful love story will be written here</div>
+                </div>
+                
+                <div class="chapter-content">
+                  <div class="story-text">
+                    <p>Our beautiful love story chapters will be added soon...</p>
+                    <p class="romantic-quote">"Every day with you adds a new page to our story." 💕</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW VALENTINE WEEK SECTION with Modern Enhancement -->
+      <section id="valentine-week" class="section animated-page">
+        <div class="container">
+          <h2>Our Valentine's Week</h2>
+          <p class="muted">Each day is a chapter of us — soft, slow, unforgettable.</p>
+          <div id="valentineWeekCards" class="valentine-week-grid"></div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section animated-page">
+        <div class="container">
+          <h2>Our Memories</h2>
+          <p class="muted">A collection of our beautiful moments together, waiting for you to explore.</p>
+          <p style="margin-top:24px;"><a class="btn btn-primary" href="memories.html">View Our Gallery</a></p>
+        </div>
+      </section>
+
+      <section id="promises" class="section animated-page">
+        <div class="container">
+          <h2>Our Promises</h2>
+          <p class="muted">Sweet commitments we make to each other, sealed with love.</p>
+          <div class="promises-grid">
+            <div class="promise-card">
+              <div class="promise-icon">💕</div>
+              <h3>My Promise to You</h3>
+              <p>I promise to love you unconditionally, to support your dreams, and to be your safe haven in every storm. You'll always have my heart, my loyalty, and my complete devotion, my beautiful Mahak.</p>
+              <span class="promise-author">— Lakshya</span>
+            </div>
+            
+            <div class="promise-card">
+              <div class="promise-icon">🌟</div>
+              <h3>Our Future Together</h3>
+              <p>Together we'll build a life filled with laughter, adventure, and endless love. We'll create a home where dreams come true, where every day feels like a celebration of us.</p>
+              <span class="promise-author">— Our Journey</span>
+            </div>
+            
+            <div class="promise-card">
+              <div class="promise-icon">🔒</div>
+              <h3>Forever & Always</h3>
+              <p>In every lifetime, in every universe, in every possible reality, I choose you. This isn't just young love - this is the kind of love that lasts forever, that grows stronger with time.</p>
+              <span class="promise-author">— Our Eternal Bond</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="travels" class="section animated-page">
+        <div class="container">
+          <h2>Our Travel Adventures</h2>
+          <p class="muted">Beautiful places we've explored together, creating memories that last forever.</p>
+          <div class="simple-travel-list">
+            <div class="travel-item">
+              <span class="travel-emoji">🏙️</span>
+              <div class="travel-info">
+                <h3>Mumbai</h3>
+                <p>The city of dreams where we made countless memories together. From street food adventures to romantic walks along Marine Drive.</p>
+              </div>
+            </div>
+            
+            <div class="travel-item">
+              <span class="travel-emoji">🏛️</span>
+              <div class="travel-info">
+                <h3>Gwalior</h3>
+                <p>Exploring the royal heritage and magnificent forts, hand in hand. Every monument witnessed our love story unfold.</p>
+              </div>
+            </div>
+            
+            <div class="travel-item">
+              <span class="travel-emoji">🕉️</span>
+              <div class="travel-info">
+                <h3>Vrindavan</h3>
+                <p>The holy city where we felt the divine blessings on our relationship. Spiritual moments that brought us even closer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="travel-note">
+            <p>✈️ <em>More adventures await us... The world is full of beautiful places to explore together!</em></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="letters" class="section animated-page">
+        <div class="container">
+          <h2>Love Letters</h2>
+          
+          <!-- NEW Handwritten Section -->
+          <div class="never-said-letter" id="neverSaidLetter">
+            <h3>Letters I never said out loud</h3>
+            <div id="letterLines" class="letter-lines"></div>
+          </div>
+          
+          <!-- Letter Card -->
+          <div class="letter-card" onclick="openLetter()">
+            <div class="letter-preview">
+              <div class="letter-icon">💌</div>
+              <h3>A Letter to Mahak</h3>
+              <p class="letter-snippet">Hey Mahak, It's 4:31 AM, October 19 — a quiet morning, and somehow, my heart felt like talking to you...</p>
+              <div class="letter-meta">
+                <span>🕐 4:31 AM</span>
+                <span>📅 Oct 19, 2025</span>
+              </div>
+              <button class="read-letter-btn">Click to Read 💕</button>
+            </div>
+          </div>
+
+          <!-- Letter Modal -->
+          <div id="letterModal" class="letter-modal">
+            <div class="letter-modal-content">
+              <span class="letter-close" onclick="closeLetter()">&times;</span>
+              <div class="typewriter-letter">
+                <div class="letter-header-simple">
+                  <h2>A Letter to Mahak</h2>
+                  <div class="letter-date">4:31 AM, October 19, 2025</div>
+                </div>
+                
+                <div class="letter-body">
+Hey Mahak,
+
+It's 4:31 AM, October 19 — a quiet morning, and somehow, my heart felt like talking to you.
+
+Happy Dhanteras, Mahak.
+I know it was yesterday, but I wished you then, and I want to wish you again today. Because honestly, every day with you feels like Dhanteras to me. You are my Lakshmi, my peace, my blessing — my barakat.
+
+You didn't wish me back, not even a small "Happy Dhanteras to you too," and yes, that stung a little. But it's okay — these small things don't change the way I feel. Maybe I've even grown used to it by now. Somewhere inside, I keep telling myself that it's fine… that things are the way they are.
+
+But you know me — I feel deeply, even about small things. When the heart is heavy, even a speck of dust feels like a wound in the eye. That's exactly how it's been lately. You've hurt me, more than I can even tell, yet I'm still trying to convince myself that everything will be okay.
+
+I built that little website with so much love, thinking we'd talk a bit, celebrate the season together — Dhanteras, Diwali, everything. But it's fine if things didn't go that way. I just wish you knew how even small silences from you echo loudly on my side.
+
+Sometimes I hold back from doing things for you — writing, creating — because I fear you'll think I'm only doing them to fix a mistake. But that's never my reason. I do it because I love making my partner feel special. That's just who I am.
+
+Maybe it's the poet in me. I've learned love from stories, poems, movies — from all the beautiful ways people express what words can't. So when I write, or build something for us, it's not to please you out of guilt. It's because I genuinely want to.
+
+If you weren't important, I wouldn't still be here, trying this hard — even through the distance, even when it hurts. I'd have walked away long ago. But I haven't, because I love you. Truly.
+
+About that "Our Story" section on the website — I left it as Coming Soon on purpose. I want to write it right — line by line, with heart, not in a hurry. Same for the "Promises" and "Bucket List" sections — every word there is real, written with meaning, not decoration.
+
+Diwali's coming soon. Another one where it's just me here, missing you. Tonight too, I waited — thinking you'd message back, maybe just a "Goodnight, going to charge my phone." A single line from you would've saved me from waiting. But you didn't. And still, I understand.
+
+Even then, after all the calls, the messages — I hold no anger. Because I know you're mine, in some quiet, unspoken way.
+
+Maybe one day, you'll see what I've seen all along — that everything I do, every word I say, comes from love. Not perfection, but love.
+
+If someday things don't work out the way I hope… that's okay too. I just never want to feel like I didn't try enough. Because I did — and I will.
+
+Take care of yourself, Mahak. You mean more to me than words could ever say.
+Love you. Always.
+
+
+Forever yours,
+— Lakshya Khetan 💕
+                </div>
+                
+                <div class="letter-actions">
+                  <button class="letter-btn close-btn" onclick="closeLetter()">Close Letter</button>
+                  <button class="letter-btn reply-btn" onclick="showReplyPrompt()">💕 Want to Reply?</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reply Modal -->
+          <div id="replyModal" class="reply-modal">
+            <div class="reply-modal-content">
+              <span class="reply-close" onclick="closeReplyModal()">&times;</span>
+              <div class="reply-content">
+                <div class="reply-icon">💕</div>
+                <h2>He is waiting for your message!</h2>
+                <p>Lakshya is eagerly waiting to hear from you. Your reply would mean the world to him.</p>
+                
+                <div class="reply-options">
+                  <div class="reply-option whatsapp">
+                    <div class="option-icon">📱</div>
+                    <div class="option-text">
+                      <h3>Message on WhatsApp</h3>
+                      <p>Send him a sweet message</p>
+                    </div>
+                  </div>
+                  
+                  <div class="reply-option call">
+                    <div class="option-icon">📞</div>
+                    <div class="option-text">
+                      <h3>Call Him</h3>
+                      <p>Hear his voice, make his day</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="waiting-message">
+                  <p>💝 <em>He's been waiting for your response... Just a simple "I love you too" would make him the happiest person alive.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Daily Messages Section -->
+          <div class="daily-message" id="dailyMessage">
+            <h3>💌 Message to You</h3>
+            <div class="message-content" id="messageContent">
+              <p class="message-text"></p>
+              <p class="message-author"></p>
+            </div>
+            <button id="newMessageBtn" class="btn btn-secondary">💕 Get Another Sweet Message</button>
+          </div>
+        </div>
+      </section>
+      
+      <section id="playlist" class="section animated-page">
+        <div class="container">
+          <h2>Our Playlist</h2>
+          <p class="muted">Songs that tell our story and make our hearts sing together.</p>
+          <div id="playlistGrid" class="playlist-grid"></div>
+          <p class="muted" style="text-align:center;margin-top:24px;font-style:italic;">✨ More beautiful songs will be added soon... ✨</p>
+        </div>
+      </section>
+
+      <section id="bucket" class="section animated-page">
+        <div class="container">
+          <h2>Bucket List</h2>
+          <ul class="bucket-moving">
+            <li>💕 Spend every sunrise and sunset together</li>
+            <li>🏡 Build our dream home filled with love and laughter</li>
+            <li>👫 Grow old together, hand in hand</li>
+            <li>🌍 Explore the world as soulmates</li>
+            <li>💖 Create a lifetime of beautiful memories</li>
+            <li>👨‍👩‍👧‍👦 Start our own little family someday</li>
+            <li>🎂 Celebrate 50+ anniversaries together</li>
+            <li>💝 Love each other more with every passing day</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>Made with ❤️ by <span class="accent">Lakshya Khetan</span></small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Valentine Week Modal -->
+  <div id="valentineModal" class="valentine-modal">
+    <div class="valentine-modal-card" id="valentineModalCard">
+      <button id="valentineModalClose" class="valentine-modal-close" aria-label="Close">&times;</button>
+      <p class="valentine-day" id="vDay"></p>
+      <h3 id="vTitle"></h3>
+      <p id="vMessage"></p>
+      <img id="vPhoto" alt="Valentine memory" />
+      <button id="revealSecretBtn" class="btn btn-secondary">Tap to see what I never said</button>
+      <p id="vSecret" class="v-secret"></p>
+    </div>
+  </div>
+
+  <script src="js/site-config.js"></script>
+  <script src="js/playlist-config.js"></script>
+  <script src="js/love-messages.js"></script>
+  <script src="js/theme-switcher.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/romantic-experience.js" defer></script>
+</body>
+</html>
