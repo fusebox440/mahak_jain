@@ -18,8 +18,12 @@ Thumbs.db
 *.swp
 *.swo
 
-# Node modules (if any)
+# Node modules
 node_modules/
+
+# Next.js build output
+.next/
+out/
 
 # Log files
 *.log
